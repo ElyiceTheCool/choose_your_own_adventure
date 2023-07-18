@@ -8,6 +8,14 @@ large_bag = "50 gold pieces, a lockpick, a small dagger, a small length of rope,
 user_bag = []
 answer = input("Before you embark you grab a pre-made satchel to assist in your adventure. There is a small, ornate one made of dark leather. A medium-sized one made of coarse burlap with the words JERRYS DO NOT TOUCH! written on it. The last satchel is a large plain bag with nothing descriptive on it. Which do you choose (small/medium/large) " ).lower()
 
+def bag_check():
+    if small_bag in user_bag:
+        print("You look into your bag and find:", str(user_bag) + ".")
+    if medium_bag in user_bag:
+        print("You look into your bag and find:", str(user_bag) + ".")
+    if large_bag in user_bag:
+        print("You look into your bag and find:", str(user_bag) + ".")
+
 if answer == "small":
     print("You grab the small bag and head for the door. Checking to make sure you outfit is complete.")
     user_bag.append(small_bag)
@@ -35,12 +43,7 @@ if answer == "left":
             print("You know better than to pick up a duck in a dungeon and leave the box alone. ")
     # TODO: Finish fleshing out new options
     elif answer == "use item":
-        if small_bag in user_bag:
-            print("You look into your bag and find:", str(user_bag) + ".")
-        if medium_bag in user_bag:
-            print("You look into your bag and find:", str(user_bag) + ".")
-        if large_bag in user_bag:
-            print("You look into your bag and find:", str(user_bag) + ".")
+        bag_check()
     else:
         print("Not a valid option. You lose.")
 
